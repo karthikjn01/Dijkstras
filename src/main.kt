@@ -1,15 +1,26 @@
 val edges = mutableListOf<Edge>()
+val nodes = mutableListOf<Node>()
 fun main(args: Array<String>) {
-    edges.add(Edge(Node("a"),Node("b"),1))
-    edges.add(Edge(Node("b"),Node("c"),1))
-    edges.add(Edge(Node("a"),Node("c"),1))
 
-    val utils = Utils(edges)
+    nodes.add(Node("a"))
+    nodes.add(Node("b"))
+    nodes.add(Node("c"))
+    nodes.add(Node("d"))
+    nodes.add(Node("e"))
+    nodes.add(Node("f"))
 
-    println(utils.getEdgesFromNode(Node("c")))
+    edges.add(Edge("a","b",1f))
+    edges.add(Edge("b","c",1f))
+    edges.add(Edge("c","d",1f))
+    edges.add(Edge("d","e",1f))
+    edges.add(Edge("e","a",1f))
+    edges.add(Edge("c","f",2f))
+    edges.add(Edge("d","f",1f))
 
 
+    val utils = Utils(edges, nodes)
 
-
+//    println(utils.findSmallest().toString())
+    utils.findPath("f")
 
 }
