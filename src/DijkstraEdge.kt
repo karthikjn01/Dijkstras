@@ -1,0 +1,1 @@
+class Node(val name:String, val num:Float = 9999f, val from:String = "na")
